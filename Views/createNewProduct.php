@@ -1,7 +1,4 @@
 <?php
-include_once 'Models/Product.php';
-include_once 'DTO/ProductDTO.php';
-
 
 $prod = new Product();
 
