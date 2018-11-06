@@ -1,32 +1,9 @@
 <?php
-include_once 'Models/Product.php';
-include_once 'DTO/ProductDTO.php';
-
 
 $prod = new Product();
-//$productID = $_GET['$param']??null;
 $productID = $data;
 $product = ($prod->getOne($productID));
 
-
-//echo $product->getPrice();
-echo ('<div class="container"><table class="table table-striped">
-   <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Category</th>
-      <th scope="col">Brand</th>
-      <th scope="col">Description</th>
-      <th scope="col">Color</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>');
-  
-$product = ($prod->getOne($productID));
-
-//var_dump($product);
 ?>
 
 <form method="post">
