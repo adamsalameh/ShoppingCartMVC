@@ -1,6 +1,6 @@
 <?php
-include_once 'Model.php';
-include_once 'DTO/ProductDTO.php';
+
+
 class Product extends Model{
     
         
@@ -9,21 +9,19 @@ class Product extends Model{
         $result = $this->db->query('SELECT * FROM products');
         return $result->fetchALL(PDO::FETCH_CLASS,'ProductDTO');
             
-    }
-    
+    }   
     
     public function getOne($id){
+        
         $result = $this->db->prepare('SELECT * FROM products WHERE id = :id');
         $result->bindParam('id',$id);
         $result->execute();
-       // return $result->fetch(PDO::FETCH_ASSOC);
         return $result->fetchObject('ProductDTO');
         
-    }
-    
+    }   
     
     public function updateProduct(ProductDTO $product){
-       // var_dump($product);
+       
         $result = $this->db->prepare('UPDATE products SET                                                 
                                     productName=:productName,
                                     category=:category,
@@ -41,38 +39,20 @@ class Product extends Model{
         $result->bindParam('price',$product->getPrice());
         $result->bindParam('quantity',$product->getQuantity());
         $result->execute();
-        
-        
-        echo $product->getProductName;
-        
+             
     }
-    
     
     public function removeProduct($id){
         $result = $this->db->prepare('DELETE FROM products WHERE id = :id');
         $result->bindParam('id',$id);
-        $result->execute();
-       
-              
-        
+        $result->execute();  
     }
     
-    public function addProduct(ProductDTO $product){
+    public function addProduct(ProductDTO $product){    
         
-        
-       $result = $this->db->prepare('INSERT INTO products (productName,
-                                    category,
-                                    brand,
-                                    description,
-                                    color,
-                                    price,
-                                    quantity) 
-                                    VALUES (:productName,:category,:brand,:description,:color,:price,:quantity) ');         
-       
-       
-                                                     
+       $result = $this->db->prepare('INSERT INTO products (productName,category,brand,description,color,price, quantity)
+                                     VALUES (:productName,:category,:brand,:description,:color,:price,:quantity) ');
                                     
-      
         $result->bindParam('productName',$product->getProductName());
         $result->bindParam('category',$product->getCategory());
         $result->bindParam('brand',$product->getBrand());
@@ -80,13 +60,8 @@ class Product extends Model{
         $result->bindParam('color',$product->getColor());
         $result->bindParam('price',$product->getPrice());
         $result->bindParam('quantity',$product->getQuantity());
-        $result->execute();
-       
-        
-       
-        
+        $result->execute();    
     }
-    
     
     
 }
