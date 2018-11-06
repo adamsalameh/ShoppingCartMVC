@@ -1,6 +1,5 @@
 <?php
 
-
 class ProductController extends Controller{
     
     
@@ -14,8 +13,7 @@ class ProductController extends Controller{
        //$data = $products->getAll();
        $this->renderView("viewAllProducts", $data);
        //$product = new Product();
-       //var_dump($product->getAll());
-       
+       //var_dump($product->getAll());      
     
     }
     
