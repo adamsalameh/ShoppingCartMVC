@@ -1,20 +1,8 @@
 <?php
 
-
-
-include_once ('Models/Product.php');
-include_once 'DTO/ProductDTO.php';
-
-
 $prod = new Product();
-//$productID = $_GET['$param']??null;
 $productID = $data;
-
-
 $product = ($prod->getOne($productID));
-echo $product->getPrice();
-
-
 
 echo ('<div class="container"><table class="table table-striped">
    <thead>
@@ -31,7 +19,6 @@ echo ('<div class="container"><table class="table table-striped">
   </thead>');
   
 $product = ($prod->getOne($productID));
-
 echo '<tr><td>'.$productID.'</td>
           <td>'. $product->getProductName().'</td>
           <td>'. $product->getCategory().'</td>
@@ -40,15 +27,5 @@ echo '<tr><td>'.$productID.'</td>
           <td>'. $product->getColor().'</td>
           <td>'. $product->getPrice().'</td>
           <td>'. $product->getQuantity().'</td></tr>';
-
 echo '</table></div>';
-
-
-
-
-
-
-
-
-
 ?>
