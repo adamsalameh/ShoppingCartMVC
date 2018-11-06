@@ -1,10 +1,6 @@
 <?php
-
 include_once 'DTO/ProductDTO.php';
-
-
 $products = new Product();
-
 echo ('<div class="container">
       <table class="table table-striped">
    <thead>
@@ -37,10 +33,5 @@ foreach ($products->getAll() as $product){
         
 } 
  
-
 echo '</table></div>';
-
-
-
-
 ?>
