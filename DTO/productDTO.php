@@ -1,7 +1,5 @@
 <?php
-
 class ProductDTO{
-
     private $id;    
     private $productName;
     private $category;
@@ -65,4 +63,4 @@ class ProductDTO{
     } 
 }
     
-?>   
+?>
