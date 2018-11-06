@@ -1,6 +1,9 @@
 <?php
 
+include_once 'Models/Model.php';
+
 class Controller{
+    
     
     protected function renderView(string $view_name,$data){
        // include('Views/header.php');
