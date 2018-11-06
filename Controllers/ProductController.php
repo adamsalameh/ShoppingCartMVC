@@ -1,10 +1,7 @@
 <?php
-
 //namespace Controllers;
-
 include_once 'Models/Product.php';
 include_once 'DTO/ProductDTO.php';
-
 class ProductController extends Controller{
     
     
@@ -49,14 +46,9 @@ class ProductController extends Controller{
     
     }
     
+    public function createNewProduct(){
+        $param = "new";
+       $this->renderView(__FUNCTION__,$param);    
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-?>
