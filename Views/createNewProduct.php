@@ -1,23 +1,3 @@
-<?php
-
-$prod = new Product();
-
-echo ('<div class="container"><table class="table table-striped">
-   <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Category</th>
-      <th scope="col">Brand</th>
-      <th scope="col">Description</th>
-      <th scope="col">Color</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-    </tr>
-  </thead>');
-  
-?>
-
 <form method="post">
     <input type="hidden" name="product_id" value="Enter"/>
     <table>
@@ -64,6 +44,7 @@ echo ('<div class="container"><table class="table table-striped">
 </form>
 
 <?
+$prod = new Product();
 if(isset($_POST['submit'])){
     
     
