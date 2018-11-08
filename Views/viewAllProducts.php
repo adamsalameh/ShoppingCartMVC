@@ -1,6 +1,6 @@
 <?php
 
-$products = new Product();
+$products = $data;
 echo ('<div class="container">
       <table class="table table-striped">
    <thead>
@@ -16,7 +16,7 @@ echo ('<div class="container">
     </tr>
   </thead>');
   
-foreach ($products->getAll() as $product){
+foreach ($products as $product){
     
         echo '<tr><td>'. $product->getId().'</td>
         <td>'. $product->getProductName().'</td>
