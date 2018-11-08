@@ -44,30 +44,5 @@
 </form>
 
 <?
-$prod = new Product();
-if(isset($_POST['submit'])){
-    
-    
-    $name = $_POST['productName'];
-    $category = $_POST['category'];
-    $brand = $_POST['brand'];
-    $description = $_POST['description'];
-    $color = $_POST['color'];
-    $price = (float)$_POST['price'];
-    $quantity = (int)$_POST['quantity'];
-    
-    // set the product details
-    $product = new ProductDTO();
-    $product->setProductName($name);
-    $product->setCategory($category);
-    $product->setbrand($brand);
-    $product->setDescription($description);
-    $product->setColor($color);
-    $product->setPrice($price);
-    $product->setQuantity($quantity);
-   
-    // update the product details
-    $prod->addProduct($product);
-    
-} 
+
 ?>
