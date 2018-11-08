@@ -1,9 +1,7 @@
 <?php
 
-$prod = new Product();
-$productID = $data;
-$product = ($prod->getOne($productID));
 
+$product = $data;
 echo ('<div class="container"><table class="table table-striped">
    <thead>
     <tr>
@@ -18,8 +16,8 @@ echo ('<div class="container"><table class="table table-striped">
     </tr>
   </thead>');
   
-$product = ($prod->getOne($productID));
-echo '<tr><td>'.$productID.'</td>
+
+echo '<tr><td>'.$product->getId().'</td>
           <td>'. $product->getProductName().'</td>
           <td>'. $product->getCategory().'</td>
           <td>'. $product->getBrand().'</td>
