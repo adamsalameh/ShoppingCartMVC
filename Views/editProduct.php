@@ -1,17 +1,13 @@
 <?php
 
-$prod = new Product();
-$productID = $data;
-$product = ($prod->getOne($productID));
-
+$product = $data;
 ?>
 
 <form method="post">
-    <input type="hidden" name="product_id" value="<?$productID?>"/>
     <table>
         <tr>
             <th>ID:</th>
-            <td><?=$productID?></td>
+            <td><?=$product->getId()?></td>
         </tr>
         <tr>
             <th>Product:</th>
@@ -50,29 +46,3 @@ $product = ($prod->getOne($productID));
         </tr>
     </table>
 </form>
-
-<?
-if(isset($_POST['submit'])){
-    
-    $name = $_POST['productName'];
-    $category = $_POST['category'];
-    $brand = $_POST['brand'];
-    $description = $_POST['description'];
-    $color = $_POST['color'];
-    $price = (float)$_POST['price'];
-    $quantity = (int)$_POST['quantity'];
-    
-    // set the product details
-    $product->setProductName($name);
-    $product->setCategory($category);
-    $product->setbrand($brand);
-    $product->setDescription($description);
-    $product->setColor($color);
-    $product->setPrice($price);
-    $product->setQuantity($quantity);
-   
-    // update the product details
-    $prod->updateProduct($product);
-    
-} 
-?>
